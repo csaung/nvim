@@ -1,0 +1,31 @@
+local set = vim.opt
+
+set.showmatch = true
+set.smartcase = true
+set.mouse = "a"
+set.incsearch = true
+set.hlsearch = true
+set.wildmode = "longest:list"
+set.clipboard = "unnamedplus"
+set.errorbells = false
+set.showmode = true
+set.showcmd = true
+set.backup = false
+set.writebackup = false
+set.backspace = "indent,eol,start"
+set.ruler = true
+set.tags = "./tags"
+set.splitright = true
+set.splitbelow = true
+set.history = 10000
+set.background = "dark"
+set.relativenumber = true
+set.number = true
+set.cursorline = true
+set.wrap = true
+set.tabstop = 4
+set.softtabstop = 4
+set.expandtab = true
+set.shiftwidth = 4
+set.autoindent = true
+
