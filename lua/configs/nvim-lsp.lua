@@ -31,10 +31,11 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
+require("nvim-lsp-installer").setup {}
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {'rust_analyzer', 'pyright', 'sumneko_lua'}
+local servers = {'rust_analyzer', 'pyright', 'sumneko_lua', 'clangd'}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities,
