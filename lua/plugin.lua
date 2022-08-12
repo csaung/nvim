@@ -13,7 +13,7 @@ require("packer").startup(function()
     use 'APZelos/blamer.nvim'
     -- use 'rust-lang/rust.vim'
     use {'fatih/vim-go', run = ':GoUpdateBinaries'}
-    use 'navarasu/onedark.nvim'
+    use 'olimorris/onedarkpro.nvim'
     use 'neovim/nvim-lspconfig'
     use 'williamboman/nvim-lsp-installer'
     use 'hrsh7th/nvim-cmp'
@@ -38,6 +38,7 @@ require("packer").startup(function()
     use {"lukas-reineke/indent-blankline.nvim"}
     use {'lewis6991/gitsigns.nvim', tag = 'release'}
     use "nathom/filetype.nvim"
+    use "windwp/nvim-ts-autotag"
     use({
     "aserowy/tmux.nvim",
     config = function()

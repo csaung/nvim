@@ -28,4 +28,3 @@ set.softtabstop = 4
 set.expandtab = true
 set.shiftwidth = 4
 set.autoindent = true
-

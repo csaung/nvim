@@ -13,6 +13,8 @@ require'nvim-treesitter.configs'.setup {
         "python",
         "rust",
         "go",
+        "typescript",
+        "javascript",
     }
 }
 

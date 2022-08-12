@@ -1,4 +1,7 @@
 local opts = { noremap=true, silent=true }
+vim.diagnostic.config ({
+    virtual_text = false,
+})
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
@@ -35,14 +38,23 @@ require("nvim-lsp-installer").setup {}
 local lspconfig = require('lspconfig')
 
 -- Enable some language servers with the additional completion capabilities offered by nvim-cmp
-local servers = {'rust_analyzer', 'pyright', 'sumneko_lua', 'clangd'}
+local servers = {'rust_analyzer', 'pyright', 'sumneko_lua', 'clangd', 'tsserver'}
+local settings = {}
+settings['sumneko_lua'] = {
+    Lua = {
+        diagnostics = {
+            globals = {'vim', 'use'}
+        },
+    }
+}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = {
         debounce_text_changes = 150,
-    }
+    },
+    settings = settings[lsp],
   }
 end
 
