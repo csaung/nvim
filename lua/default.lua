@@ -1,5 +1,6 @@
 local set = vim.opt
 
+set.laststatus = 3
 set.showmatch = true
 set.smartcase = true
 set.mouse = "a"

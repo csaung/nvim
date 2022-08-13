@@ -1,18 +1,21 @@
--- tmux, neovim, ripgrep, ctags, packer, powerline
-vim.opt.laststatus = 3
+--[[
+-- Env requirements:
+-- tmux, neovim 0.7, ripgrep, packer, powerline
+]]
 
 require('default')
 require('plugin')
 require('keymap')
-require('configs.nvim-tree')
-require('configs.nvim-treesitter')
-require('configs.nvim-cmp')
-require('configs.nvim-lsp')
-require('configs.lualine')
-require('configs.luasnip')
-require('configs.telescope')
-require('configs.blamer')
-require('configs.color')
-require('configs.toggleterm')
-require('configs.gitsigns')
-require('configs.nvim-ts-autotag')
+require('config/nvim-tree')
+require('config/nvim-treesitter')
+require('config/nvim-cmp')
+require('config/nvim-lsp')
+require('config/lualine')
+require('config/telescope')
+require('config/blamer')
+require('config/color')
+require('config/toggleterm')
+require('config/gitsigns')
+require('config/nvim-ts-autotag')
+require('config/tmux')
+require('config/lspsaga')
