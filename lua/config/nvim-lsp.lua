@@ -12,7 +12,7 @@ if not cmpLspOk then
     return
 end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmpLsp.update_capabilities(capabilities)
+capabilities = cmpLsp.default_capabilities(capabilities)
 
 local lspConfigOk, lspConfig = pcall(require, 'lspconfig')
 if not lspConfigOk then

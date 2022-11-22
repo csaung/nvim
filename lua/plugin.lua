@@ -1,21 +1,17 @@
 local ok, packer = pcall(require, "packer")
 
-local packerBootstrap = nil
-
-if not ok then
-    print('packer package manager not installed, would you like to install it? (y/n)\n')
-    local choice = io.read(1)
-    if choice == 'n' then return
-    elseif choice ~= 'y' then
-        print('invalid choice, terminating\n')
-    else
+local ensure_packer = function()
+    if not ok then
+        print('packer package manager not installed, installing')
         local path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
         if vim.fn.empty(vim.fn.glob(path)) > 0 then
-            packerBootstrap = vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', path })
+            vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', path })
             vim.cmd [[packadd packer.nvim]]
         end
     end
 end
+
+local packerBootstrap = ensure_packer()
 
 packer.startup(function()
     use 'wbthomason/packer.nvim'
